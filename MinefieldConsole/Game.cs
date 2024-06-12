@@ -41,6 +41,7 @@ namespace MinefieldConsole
         private void PlayGame()
         {
             var numberOfLives = 5;
+            var currentScore = 0;
             var currentPosition = 0;
 
             while (numberOfLives > 0)
@@ -55,6 +56,7 @@ namespace MinefieldConsole
 
                 if (validMove)
                 {
+                    currentScore++;
                     currentPosition = board.GetNewPosition(currentPosition, key.Key);
 
                     if (board.IsSquareMined(currentPosition))
@@ -75,7 +77,7 @@ namespace MinefieldConsole
 
                         if (board.IsGameOver(currentPosition, numberOfLives))
                         {
-                            WriteColouredText("Congratulations!! YOU WON!!", ConsoleColor.Green, true);
+                            WriteColouredText($"Congratulations!! YOU WON!!  Your score is: {currentScore}", ConsoleColor.Green, true);
                             break;
                         }
                     }
