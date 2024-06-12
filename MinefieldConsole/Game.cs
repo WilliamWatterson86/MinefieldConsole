@@ -49,6 +49,7 @@ namespace MinefieldConsole
                 Console.WriteLine();
                 Console.WriteLine($"Current position: [{board.GetSquareCoordinates(currentPosition)}]");
                 Console.WriteLine($"Number of lives: {numberOfLives}");
+                Console.WriteLine($"Number of moves taken: {currentScore}");
                 Console.WriteLine("Make your move... (Up, Down, Left, Right keys)" );
 
                 var key = Console.ReadKey();
